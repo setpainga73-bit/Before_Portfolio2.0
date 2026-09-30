@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Aung Set Paing | Junior Developer &amp; Cyber Security Student
+    </title>
+
+    <!-- SEO & Social Meta Tags -->
+    <meta
+      name="description"
+      content="Portfolio of Aung Set Paing - Junior Developer and NCC Education Level 5 Cyber Security student. Skilled in C#/.NET Framework, SQL database design, and HTML/CSS/JavaScript."
+    />
+    <meta name="author" content="Aung Set Paing" />
+    <meta
+      name="keywords"
+      content="Aung Set Paing, Junior Developer, Cyber Security, C#, .NET Framework, SQL, HTML, CSS, JavaScript, NCC Education Level 5, NCC Education Level 4"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/setpainga73-bit" />
+    <meta
+      property="og:title"
+      content="Aung Set Paing | Junior Developer &amp; Cyber Security Student"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio of Aung Set Paing - Junior Developer and NCC Education Level 5 Cyber Security student. Skilled in C#/.NET Framework, SQL database design, and HTML/CSS/JavaScript."
+    />
+    <meta property="og:image" content="assets/hero.jpg" />
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Aung Set Paing | Junior Developer &amp; Cyber Security Student"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Aung Set Paing - Junior Developer and NCC Education Level 5 Cyber Security student. Skilled in C#/.NET Framework, SQL database design, and HTML/CSS/JavaScript."
+    />
+    <meta name="twitter:image" content="assets/hero.jpg" />
+
+    <!-- Mobile Browser Theme Color -->
+    <meta name="theme-color" content="#0b1020" id="theme-color-meta" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Google Fonts: Space Grotesk, Inter, and Noto Sans Myanmar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Inline head script to prevent flash of unstyled theme / wrong theme (FOUC) -->
+    <script>
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem("portfolio_theme");
+          const systemPrefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const theme = savedTheme
+            ? savedTheme
+            : systemPrefersDark
+              ? "dark"
+              : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+
+          const themeColorMeta = document.getElementById("theme-color-meta");
+          if (themeColorMeta) {
+            themeColorMeta.setAttribute(
+              "content",
+              theme === "dark" ? "#0b1020" : "#eef1f8",
+            );
+          }
+
+          const savedLang = localStorage.getItem("portfolio_lang") || "en";
+          document.documentElement.setAttribute("lang", savedLang);
+        } catch (e) {
+          console.error("Initial theme/lang initialization error:", e);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Blurred Drifting Background Gradient Blobs -->
+    <div class="blob-container" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <!-- 1. Sticky Glass Navbar -->
+    <header class="site-header">
+      <div class="container">
+        <nav class="navbar" aria-label="Main Navigation">
+          <!-- Logo -->
+          <a href="#hero" class="brand-logo" aria-label="Aung Set Paing Home">
+            <span class="logo-code">&lt;</span>
+            <span class="logo-name">ASP</span>
+            <span class="logo-code"> /&gt;</span>
+          </a>
+
+          <!-- Desktop Navigation Links -->
+          <ul class="nav-desktop">
+            <li>
+              <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+            </li>
+            <li>
+              <a href="#skills" class="nav-link" data-i18n="nav_skills"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a href="#projects" class="nav-link" data-i18n="nav_projects"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="#education" class="nav-link" data-i18n="nav_education"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="nav-link" data-i18n="nav_contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+
+          <!-- Controls: Theme Toggle, Language Switch & Mobile Toggle -->
+          <div class="nav-controls">
+            <!-- Theme Toggle Button -->
+            <button
+              id="theme-toggle"
+              class="control-btn"
+              type="button"
+              aria-label="Toggle color theme"
+              data-i18n-aria="theme_toggle_label"
+            >
+              <!-- Sun Icon (for dark mode) -->
+              <svg
+                class="theme-icon theme-icon-sun"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"
+                />
+              </svg>
+              <!-- Moon Icon (for light mode) -->
+              <svg
+                class="theme-icon theme-icon-moon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12.3 2a10 10 0 0 0-.19 20 10.04 10.04 0 0 0 9.71-7.69.75.75 0 0 0-.91-.91 8.5 8.5 0 0 1-10.4-10.4.75.75 0 0 0-.91-.91A10.2 10.2 0 0 0 12.3 2z"
+                />
+              </svg>
+            </button>
+
+            <!-- Language Switch Button (EN / MY) -->
+            <button
+              id="lang-toggle"
+              class="control-btn lang-btn"
+              type="button"
+              aria-label="Switch language"
+              data-i18n-aria="lang_toggle_label"
+            >
+              <span id="lang-label">MY</span>
+            </button>
+
+            <!-- Hamburger Toggle (Mobile) -->
+            <button
+              id="menu-toggle"
+              class="menu-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-drawer"
+              aria-label="Toggle navigation menu"
+              data-i18n-aria="menu_toggle_label"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+
+        <!-- Mobile Dropdown Drawer -->
+        <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+          <ul class="mobile-nav-list">
+            <li>
+              <a href="#about" class="mobile-nav-link" data-i18n="nav_about"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#skills" class="mobile-nav-link" data-i18n="nav_skills"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="mobile-nav-link"
+                data-i18n="nav_projects"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#education"
+                class="mobile-nav-link"
+                data-i18n="nav_education"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="mobile-nav-link" data-i18n="nav_contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 2. Hero Section -->
+      <section
+        id="hero"
+        class="section hero-section"
+        aria-labelledby="hero-title"
+      >
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Hero Text & CTAs -->
+            <div class="hero-content">
+              <!-- Glass Status Badge with Pulsing Green Dot -->
+              <div class="status-badge glass-pill">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span data-i18n="hero_status">Open to Junior Developer Roles</span>
+              </div>
+
+              <!-- Main Heading with Owner Name -->
+              <h1 id="hero-title" class="hero-heading">
+                <span data-i18n="hero_greeting">Hi, I'm</span>
+                <span class="gradient-text">Aung Set Paing</span>
+              </h1>
+
+              <!-- Typing Animation Container -->
+              <div class="hero-role-wrapper">
+                <span id="typed-role" class="hero-role" aria-live="polite"
+                  >Junior Developer &amp; Cyber Security Student</span
+                >
+                <span class="typing-cursor" aria-hidden="true">|</span>
+              </div>
+
+              <!-- Short Tagline -->
+              <p class="hero-tagline" data-i18n="hero_tagline">
+                Computing student currently pursuing NCC Education Level 5 in
+                Cyber Security. Dedicated to building structured applications
+                with C#/.NET, designing relational databases, and strengthening
+                software security. Seeking an internship or junior role in web development.
+              </p>
+
+              <!-- Action Buttons -->
+              <div class="hero-actions">
+                <a
+                  href="#projects"
+                  class="btn btn-primary"
+                  data-i18n="hero_btn_projects"
+                >
+                  View Projects
+                </a>
+                <a
+                  href="assets/Aung_Set_Paing_CV.pdf"
+                  class="btn btn-glass"
+                  download="Aung_Set_Paing_CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"
+                    />
+                  </svg>
+                  <span data-i18n="hero_btn_cv">Download CV</span>
+                </a>
+                <a
+                  href="#contact"
+                  class="btn btn-glass"
+                  data-i18n="hero_btn_contact"
+                >
+                  Contact Me
+                </a>
+              </div>
+            </div>
+
+            <!-- Hero Portrait in Glass Frame with Gradient Glow -->
+            <div class="hero-visual">
+              <div class="hero-glow" aria-hidden="true"></div>
+              <div class="hero-frame glass-card">
+                <picture class="hero-picture">
+                  <source srcset="assets/hero.webp" type="image/webp" />
+                  <img
+                    src="assets/hero.jpg"
+                    alt="Portrait photo of Aung Set Paing, Junior Full-Stack Developer"
+                    width="420"
+                    height="420"
+                    class="hero-img"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. About Section -->
+      <section
+        id="about"
+        class="section about-section"
+        aria-labelledby="about-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="about-heading" class="section-title">
+              <span data-i18n="about_title">About</span>
+              <span class="gradient-text" data-i18n="about_title_accent"
+                >Me</span
+              >
+            </h2>
+            <p class="section-subtitle" data-i18n="about_subtitle">
+              Bridging software development, database design, and cyber security
+            </p>
+          </header>
+
+          <div class="about-grid">
+            <!-- Second Photo with Glass Frame -->
+            <div class="about-visual">
+              <div class="about-frame glass-card">
+                <picture>
+                  <source srcset="assets/about.webp" type="image/webp" />
+                  <img
+                    src="assets/about.jpg"
+                    alt="Aung Set Paing collaborating on software code"
+                    width="380"
+                    height="420"
+                    loading="lazy"
+                    class="about-img"
+                  />
+                </picture>
+              </div>
+            </div>
+
+            <!-- Bio & Quick Facts & Counters -->
+            <div class="about-content">
+              <p class="about-text" data-i18n="about_bio_1">
+                I am a motivated computing student currently advancing through
+                the NCC Education Level 5 Diploma in Cyber Security, having
+                completed the NCC Education Level 4 Diploma in Computing. My
+                core software foundation is built on practical frontend
+                development using HTML, CSS, and vanilla JavaScript, paired with
+                object-oriented programming in C# and the .NET Framework.
+              </p>
+              <p class="about-text" data-i18n="about_bio_2">
+                My long-term career ambition is Cyber Security. I am passionate
+                about understanding how systems work from the inside out — from
+                relational database structures and queries to application
+                security principles. I am eager to join a security-minded
+                organization where I can contribute to real projects, learn from
+                seasoned professionals, and protect digital assets.
+              </p>
+
+              <!-- 3 Quick-Fact Glass Cards -->
+              <div class="facts-grid">
+                <div class="fact-card glass-card">
+                  <span class="fact-icon" aria-hidden="true">🎓</span>
+                  <h3 class="fact-title" data-i18n="fact_1_title">
+                    Academic Pathway
+                  </h3>
+                  <p class="fact-desc" data-i18n="fact_1_desc">
+                    NCC Level 5 Cyber Security (In Progress) &amp; Level 4
+                    Computing (Completed)
+                  </p>
+                </div>
+
+                <div class="fact-card glass-card">
+                  <span class="fact-icon" aria-hidden="true">💻</span>
+                  <h3 class="fact-title" data-i18n="fact_2_title">
+                    Core Stack
+                  </h3>
+                  <p class="fact-desc" data-i18n="fact_2_desc">
+                    HTML, CSS, JavaScript, SQL, C# / .NET Framework
+                  </p>
+                </div>
+
+                <div class="fact-card glass-card">
+                  <span class="fact-icon" aria-hidden="true">🛡️</span>
+                  <h3 class="fact-title" data-i18n="fact_3_title">
+                    Career Goal
+                  </h3>
+                  <p class="fact-desc" data-i18n="fact_3_desc">
+                    Cyber Security Internship or Junior Security Role
+                  </p>
+                </div>
+              </div>
+
+              <!-- 4 Animated Counters (Real Numbers Only) -->
+              <div class="counters-grid" id="counters-section">
+                <div class="counter-item">
+                  <div class="counter-number" data-target="2" data-suffix="">
+                    0
+                  </div>
+                  <div class="counter-label" data-i18n="stat_1_label">
+                    NCC Diplomas (L4 &amp; L5)
+                  </div>
+                </div>
+
+                <div class="counter-item">
+                  <div class="counter-number" data-target="5" data-suffix="+">
+                    0
+                  </div>
+                  <div class="counter-label" data-i18n="stat_2_label">
+                    Completed Projects
+                  </div>
+                </div>
+
+                <div class="counter-item">
+                  <div class="counter-number" data-target="5" data-suffix="">
+                    0
+                  </div>
+                  <div class="counter-label" data-i18n="stat_3_label">
+                    Core Technologies
+                  </div>
+                </div>
+
+                <div class="counter-item">
+                  <div class="counter-number" data-target="500" data-suffix="+">
+                    0
+                  </div>
+                  <div class="counter-label" data-i18n="stat_4_label">
+                    Practical Coding Hours
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Skills Section (3D Tilt on Hover) -->
+      <section
+        id="skills"
+        class="section skills-section"
+        aria-labelledby="skills-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="skills-heading" class="section-title">
+              <span data-i18n="skills_title">Technical</span>
+              <span class="gradient-text" data-i18n="skills_title_accent"
+                >Skills</span
+              >
+            </h2>
+            <p class="section-subtitle" data-i18n="skills_subtitle">
+              Practical programming languages, frameworks, and database tools I
+              actively use
+            </p>
+          </header>
+
+          <div class="skills-grid">
+            <!-- Card 1: Frontend Fundamentals -->
+            <article
+              class="glass-card skill-card js-tilt-card"
+              aria-labelledby="skill-frontend-title"
+            >
+              <div class="skill-header">
+                <div class="skill-icon-wrapper" aria-hidden="true">
+                  <svg class="skill-icon" viewBox="0 0 24 24">
+                    <path
+                      d="M12 18.178l-4.62-1.256-.328-3.544h2.27l.158 1.744 2.52.68 2.52-.68.26-2.922H6.918l-.71-7.8h15.584l-.24 2.6H8.678l.24 2.6h9.124l-.762 8.578L12 18.178zM3 2l1.6 17.6L12 22l7.4-2.4L21 2H3z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  id="skill-frontend-title"
+                  class="skill-title"
+                  data-i18n="skill_cat_frontend"
+                >
+                  Frontend Fundamentals
+                </h3>
+              </div>
+              <p class="skill-description" data-i18n="skill_desc_frontend">
+                Building clean, responsive, and interactive user interfaces
+                using standard web technologies.
+              </p>
+              <div class="skill-chips">
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+                <span class="chip">JavaScript (ES6+)</span>
+                <span class="chip">Responsive Web Design</span>
+                <span class="chip">Semantic HTML</span>
+                <span class="chip">DOM Manipulation</span>
+              </div>
+            </article>
+
+            <!-- Card 2: C# / .NET Framework -->
+            <article
+              class="glass-card skill-card js-tilt-card"
+              aria-labelledby="skill-backend-title"
+            >
+              <div class="skill-header">
+                <div class="skill-icon-wrapper" aria-hidden="true">
+                  <svg class="skill-icon" viewBox="0 0 24 24">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  id="skill-backend-title"
+                  class="skill-title"
+                  data-i18n="skill_cat_backend"
+                >
+                  C# / .NET Framework
+                </h3>
+              </div>
+              <p class="skill-description" data-i18n="skill_desc_backend">
+                Developing structured desktop and console applications with
+                object-oriented C# and .NET Framework.
+              </p>
+              <div class="skill-chips">
+                <span class="chip">C#</span>
+                <span class="chip">.NET Framework</span>
+                <span class="chip">OOP Principles</span>
+                <span class="chip">Windows Forms</span>
+                <span class="chip">Console Applications</span>
+                <span class="chip">ADO.NET Integration</span>
+                <span class="chip">CRUD Operations</span>
+                <span class="chip">Exception Handling</span>
+              </div>
+            </article>
+
+            <!-- Card 3: Database & SQL -->
+            <article
+              class="glass-card skill-card js-tilt-card"
+              aria-labelledby="skill-db-title"
+            >
+              <div class="skill-header">
+                <div class="skill-icon-wrapper" aria-hidden="true">
+                  <svg class="skill-icon" viewBox="0 0 24 24">
+                    <path
+                      d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4zm0 2c3.87 0 6 1.5 6 2s-2.13 2-6 2-6-1.5-6-2 2.13-2 6-2zm0 5c3.87 0 6 1.5 6 2s-2.13 2-6 2-6-1.5-6-2 2.13-2 6-2zm0 5c3.87 0 6 1.5 6 2s-2.13 2-6 2-6-1.5-6-2 2.13-2 6-2z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  id="skill-db-title"
+                  class="skill-title"
+                  data-i18n="skill_cat_database"
+                >
+                  Database &amp; SQL
+                </h3>
+              </div>
+              <p class="skill-description" data-i18n="skill_desc_database">
+                Designing relational schemas, normalization, writing SQL
+                queries, and managing data integrity.
+              </p>
+              <div class="skill-chips">
+                <span class="chip">SQL</span>
+                <span class="chip">Relational DB Design</span>
+                <span class="chip">Normalization (1NF-3NF)</span>
+                <span class="chip">ER Diagrams (ERD)</span>
+                <span class="chip">Primary &amp; Foreign Keys</span>
+                <span class="chip">Data Integrity</span>
+                <span class="chip">Database Security</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Projects Section (Filter Tabs & Dynamic Filter) -->
+      <section
+        id="projects"
+        class="section projects-section"
+        aria-labelledby="projects-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="projects-heading" class="section-title">
+              <span data-i18n="projects_title">Featured</span>
+              <span class="gradient-text" data-i18n="projects_title_accent"
+                >Projects</span
+              >
+            </h2>
+            <p class="section-subtitle" data-i18n="projects_subtitle">
+              Practical applications and case studies showcasing end-to-end
+              development
+            </p>
+          </header>
+
+          <!-- Filter Tabs -->
+          <div
+            class="project-filters"
+            role="tablist"
+            aria-label="Filter projects by category"
+          >
+            <button
+              class="filter-btn active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-filter="all"
+              data-i18n="filter_all"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-filter="frontend"
+              data-i18n="filter_frontend"
+            >
+              Frontend
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-filter="fullstack"
+              data-i18n="filter_fullstack"
+            >
+              Full-stack
+            </button>
+          </div>
+
+          <!-- Project Cards Grid -->
+          <!-- NOTE FOR EXTENSION: Adding a new project only requires copying one article block and specifying data-category="frontend" or "fullstack" -->
+          <div class="projects-grid">
+            <!-- Featured Project 1: Bean Boutique (Matches 'frontend' and 'all') -->
+            <article
+              class="glass-card project-card"
+              data-category="frontend"
+              aria-labelledby="project-bean-title"
+            >
+              <div class="project-media">
+                <picture>
+                  <source
+                    srcset="assets/bean-boutique.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="assets/bean-boutique.jpg"
+                    alt="Bean Boutique artisan coffee shop website preview screenshot"
+                    width="800"
+                    height="500"
+                    loading="lazy"
+                    class="project-img"
+                  />
+                </picture>
+                <span class="project-badge-top" data-i18n="badge_featured"
+                  >Featured Case Study</span
+                >
+              </div>
+              <div class="project-body">
+                <h3
+                  id="project-bean-title"
+                  class="project-title"
+                  data-i18n="project_bean_title"
+                >
+                  Bean Boutique
+                </h3>
+                <p class="project-desc" data-i18n="project_bean_desc">
+                  A multi-page artisan coffee shop web application designed for
+                  a frictionless customer ordering experience. Features a timed
+                  discount promotion modal, dynamic product showcase carousel,
+                  persistent shopping cart stored via LocalStorage, the
+                  'BrewMatch' interactive mood-based coffee recommendation tool,
+                  responsive mobile drawer navigation, and an embedded Google
+                  Maps store locator.
+                </p>
+                <div class="project-chips">
+                  <span class="chip">HTML5</span>
+                  <span class="chip">CSS3</span>
+                  <span class="chip">JavaScript (ES6+)</span>
+                  <span class="chip">LocalStorage</span>
+                  <span class="chip">Google Maps Embed</span>
+                  <span class="chip">Responsive UI</span>
+                </div>
+                <div class="project-actions">
+                  <a
+                    href="https://github.com/setpainga73-bit/Before-assigment"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-sm btn-primary"
+                  >
+                    <svg
+                      class="btn-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                      />
+                    </svg>
+                    <span data-i18n="btn_github">View on GitHub</span>
+                  </a>
+                  <!-- Live Demo: replace href with production URL or use fallback -->
+                  <a
+                    href="https://setpainga73-bit.github.io/Before-assigment/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-sm btn-glass"
+                  >
+                    <svg
+                      class="btn-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+                      />
+                    </svg>
+                    <span data-i18n="btn_livedemo">Live Demo</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Coming Soon Card 1: Full-stack Project -->
+            <article
+              class="glass-card project-card coming-soon"
+              data-category="fullstack"
+              aria-labelledby="project-pos-title"
+            >
+              <div class="coming-soon-media">
+                <svg
+                  class="coming-soon-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"
+                  />
+                </svg>
+              </div>
+              <div class="project-body">
+                <span class="project-badge-top" data-i18n="badge_coming_soon"
+                  >Coming Soon</span
+                >
+                <h3
+                  id="project-pos-title"
+                  class="project-title"
+                  data-i18n="project_pos_title"
+                >
+                  Inventory &amp; POS System
+                </h3>
+                <p class="project-desc" data-i18n="project_pos_desc">
+                  A comprehensive management system built with C# and .NET with
+                  SQL database integration for tracking real-time stock levels,
+                  handling point-of-sale transactions, and generating analytical
+                  business reports.
+                </p>
+                <div class="project-chips">
+                  <span class="chip">C#</span>
+                  <span class="chip">.NET</span>
+                  <span class="chip">SQL</span>
+                  <span class="chip">Relational DB</span>
+                  <span class="chip">CRUD</span>
+                </div>
+                <div class="project-actions">
+                  <span class="chip" data-i18n="badge_in_dev"
+                    >In Active Development</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Coming Soon Card 2: Frontend Dashboard -->
+            <article
+              class="glass-card project-card coming-soon"
+              data-category="frontend"
+              aria-labelledby="project-devtrack-title"
+            >
+              <div class="coming-soon-media">
+                <svg
+                  class="coming-soon-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
+                  />
+                </svg>
+              </div>
+              <div class="project-body">
+                <span class="project-badge-top" data-i18n="badge_coming_soon"
+                  >Coming Soon</span
+                >
+                <h3
+                  id="project-devtrack-title"
+                  class="project-title"
+                  data-i18n="project_devtrack_title"
+                >
+                  DevTrack Productivity Hub
+                </h3>
+                <p class="project-desc" data-i18n="project_devtrack_desc">
+                  An all-in-one productivity dashboard for programmers featuring
+                  customizable task boards, Pomodoro focus timers, habit
+                  tracking streaks, and offline-first storage.
+                </p>
+                <div class="project-chips">
+                  <span class="chip">JavaScript (ES6+)</span>
+                  <span class="chip">CSS Grid</span>
+                  <span class="chip">Local Storage</span>
+                  <span class="chip">UI Design</span>
+                </div>
+                <div class="project-actions">
+                  <span class="chip" data-i18n="badge_planning"
+                    >In Planning Phase</span
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Education Section (Timeline: Newest First) -->
+      <section
+        id="education"
+        class="section education-section"
+        aria-labelledby="education-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="education-heading" class="section-title">
+              <span data-i18n="education_title">Education</span>
+              <span class="gradient-text" data-i18n="education_title_accent"
+                >Timeline</span
+              >
+            </h2>
+            <p class="section-subtitle" data-i18n="education_subtitle">
+              Academic computing &amp; cyber security credentials accredited by
+              NCC Education (UK)
+            </p>
+          </header>
+
+          <div class="education-timeline">
+            <!-- Timeline Item 1 (Newest): NCC Level 5 Cyber Security (In progress) -->
+            <div class="timeline-item">
+              <div class="timeline-marker in-progress" aria-hidden="true">
+                <div class="timeline-marker-dot"></div>
+              </div>
+              <article
+                class="glass-card timeline-card"
+                aria-labelledby="edu-l5-title"
+              >
+                <div class="timeline-header">
+                  <div>
+                    <h3
+                      id="edu-l5-title"
+                      class="edu-degree"
+                      data-i18n="edu_l5_title"
+                    >
+                      NCC Education Level 5 Diploma in Cyber Security
+                    </h3>
+                    <div class="edu-institution" data-i18n="edu_l5_inst">
+                      NCC Education (UK Qualifications Framework)
+                    </div>
+                  </div>
+                  <span
+                    class="timeline-badge timeline-badge-in-progress"
+                    data-i18n="edu_l5_badge"
+                    >In Progress</span
+                  >
+                </div>
+
+                <div class="edu-status" data-i18n="edu_l5_status">
+                  Currently Studying • Equivalent to Year 2 of a UK University
+                  Degree
+                </div>
+                <p class="edu-desc" data-i18n="edu_l5_desc">
+                  Advanced British diploma specializing in cyber security,
+                  network defense, secure system design, threat intelligence,
+                  and information assurance protocols.
+                </p>
+
+                <h4 class="edu-modules-title" data-i18n="edu_l5_modules_title">
+                  Core Focus Areas:
+                </h4>
+                <div class="edu-modules-list">
+                  <span class="chip" data-i18n="l5_mod_1"
+                    >Cyber Security Principles &amp; Threat Analysis</span
+                  >
+                  <span class="chip" data-i18n="l5_mod_2"
+                    >Network Security &amp; Cryptography Fundamentals</span
+                  >
+                  <span class="chip" data-i18n="l5_mod_3"
+                    >Information Security Governance &amp; Compliance</span
+                  >
+                  <span class="chip" data-i18n="l5_mod_4"
+                    >Incident Response &amp; Vulnerability Assessment</span
+                  >
+                  <span class="chip" data-i18n="l5_mod_5"
+                    >Secure Systems Development</span
+                  >
+                </div>
+              </article>
+            </div>
+
+            <!-- Timeline Item 2: NCC Level 4 Computing (Completed) -->
+            <div class="timeline-item">
+              <div class="timeline-marker completed" aria-hidden="true">
+                <div class="timeline-marker-dot"></div>
+              </div>
+              <article
+                class="glass-card timeline-card"
+                aria-labelledby="edu-l4-title"
+              >
+                <div class="timeline-header">
+                  <div>
+                    <h3
+                      id="edu-l4-title"
+                      class="edu-degree"
+                      data-i18n="edu_l4_title"
+                    >
+                      NCC Education Level 4 Diploma in Computing
+                    </h3>
+                    <div class="edu-institution" data-i18n="edu_l4_inst">
+                      NCC Education (UK Qualifications Framework)
+                    </div>
+                  </div>
+                  <span
+                    class="timeline-badge timeline-badge-completed"
+                    data-i18n="edu_l4_badge"
+                    >Completed</span
+                  >
+                </div>
+
+                <div class="edu-status" data-i18n="edu_l4_status">
+                  Successfully Completed • Equivalent to Year 1 of a UK
+                  University Degree
+                </div>
+                <p class="edu-desc" data-i18n="edu_l4_desc">
+                  Comprehensive British diploma establishing foundational
+                  competencies across software development methodologies,
+                  computer hardware/architecture, database management systems,
+                  and networking.
+                </p>
+
+                <h4 class="edu-modules-title" data-i18n="edu_l4_modules_title">
+                  Key Modules Completed:
+                </h4>
+                <div class="edu-modules-list">
+                  <span class="chip" data-i18n="l4_mod_1"
+                    >Software Development Methodologies</span
+                  >
+                  <span class="chip" data-i18n="l4_mod_2"
+                    >Relational Database Design &amp; SQL</span
+                  >
+                  <span class="chip" data-i18n="l4_mod_3"
+                    >Computer Networks &amp; Data Transmission</span
+                  >
+                  <span class="chip" data-i18n="l4_mod_4"
+                    >Computer Systems Architecture</span
+                  >
+                  <span class="chip" data-i18n="l4_mod_5"
+                    >Designing Object-Oriented Programs (C#)</span
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Contact Section (No Form) -->
+      <section
+        id="contact"
+        class="section contact-section"
+        aria-labelledby="contact-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="contact-heading" class="section-title">
+              <span data-i18n="contact_title">Get In</span>
+              <span class="gradient-text" data-i18n="contact_title_accent"
+                >Touch</span
+              >
+            </h2>
+            <p class="section-subtitle" data-i18n="contact_subtitle">
+              I am actively seeking internships and junior roles in Software Development. Let's discuss how I can
+              contribute to your team!
+            </p>
+          </header>
+
+          <div class="contact-wrapper">
+            <div class="contact-status-bar">
+              <div
+                class="glass-pill status-badge"
+                style="margin: 0 auto 2.5rem; display: inline-flex"
+              >
+                <span class="status-dot"></span>
+                <span data-i18n="contact_status_pill"
+                  >Available for Junior Developer Roles • Immediatestart</span>
+              </div>
+            </div>
+
+            <div class="contact-cards-grid">
+              <!-- Email Card -->
+              <div class="glass-card contact-card">
+                <div class="contact-icon-wrapper" aria-hidden="true">
+                  <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="contact-title" data-i18n="contact_email_title">
+                  Direct Email
+                </h3>
+                <p class="contact-detail">setpainga73@gmail.com</p>
+                <div class="contact-actions">
+                  <button
+                    id="copy-email-btn"
+                    class="btn btn-sm btn-primary"
+                    type="button"
+                  >
+                    <svg
+                      class="btn-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                      />
+                    </svg>
+                    <span data-i18n="btn_copy_email">Copy Email</span>
+                  </button>
+                  <a
+                    href="mailto:setpainga73@gmail.com"
+                    class="btn btn-sm btn-glass"
+                  >
+                    <span data-i18n="btn_send_email">Send Email</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- GitHub Card -->
+              <div class="glass-card contact-card">
+                <div class="contact-icon-wrapper" aria-hidden="true">
+                  <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="contact-title" data-i18n="contact_github_title">
+                  GitHub
+                </h3>
+                <p class="contact-detail">github.com/setpainga73-bit</p>
+                <div class="contact-actions">
+                  <a
+                    href="https://github.com/setpainga73-bit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-sm btn-glass"
+                  >
+                    <span>github.com/setpainga73-bit</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- LinkedIn Card (Configurable Link) -->
+              <div class="glass-card contact-card">
+                <div class="contact-icon-wrapper" aria-hidden="true">
+                  <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="contact-title" data-i18n="contact_linkedin_title">
+                  LinkedIn
+                </h3>
+                <p class="contact-detail">linkedin.com/in/aungsetpaing</p>
+                <div class="contact-actions">
+                  <!-- Replace with your actual LinkedIn profile or omit card if preferred -->
+                  <a
+                    href="https://linkedin.com/in/aungsetpaing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-sm btn-glass"
+                  >
+                    <span>linkedin.com/in/aungsetpaing</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 8. Footer & Back-to-Top Button -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <a href="#hero" class="brand-logo" aria-label="Back to top logo">
+            <span class="logo-code">&lt;</span>
+            <span class="logo-name">ASP</span>
+            <span class="logo-code"> /&gt;</span>
+          </a>
+          <ul class="footer-links">
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+            <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+            <li>
+              <a href="#education" data-i18n="nav_education">Education</a>
+            </li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+          <p class="footer-credits" data-i18n="footer_built_with">
+            Crafted with plain HTML5, CSS3 &amp; Vanilla JavaScript.
+          </p>
+          <p class="footer-credits" data-i18n="footer_rights">
+            &copy; 2026 Aung Set Paing. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="back-to-top-btn"
+      type="button"
+      aria-label="Back to top"
+      data-i18n-aria="back_to_top_label"
+    >
+      <svg class="back-to-top-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+      </svg>
+    </button>
+
+    <!-- Copy Toast Notification Popup -->
+    <div
+      id="toast"
+      class="toast"
+      role="status"
+      aria-live="polite"
+      aria-hidden="true"
+    >
+      <span class="toast-icon">✓</span>
+      <span id="toast-text" data-i18n="toast_copied"
+        >Email address copied to clipboard!</span
+      >
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/lang.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
